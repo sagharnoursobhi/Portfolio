@@ -1,1 +1,32 @@
-<p>app-navbar works!</p>
+<nav class="navbar navbar-expand-lg" [ngClass]="isScrolled ? 'bg-dark position-fixed w-100 top-0 left-0 large-index' : 'bg-transparent'">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a class="nav-link"><img class="logo" src="../../../assets/logo.png" alt=""></a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
+            <a class="nav-link active white-color p-0" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
+            <a class="nav-link white-color text-dark p-0" href="#">My Work</a>
+          </li>
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
+            <a class="nav-link white-color p-0" href="#">
+              About
+            </a>
+          </li>
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
+            <a class="nav-link white-color p-0">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

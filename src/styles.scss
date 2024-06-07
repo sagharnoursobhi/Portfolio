@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("./assets/fonts/Roboto-Regular.ttf") format('truetype'),
+  url("./assets/fonts/roboto-regular-webfont.woff") format('truetype'),
+  url("./assets/fonts/roboto-regular-webfont.woff2") format('truetype');
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none!important;
+}
+
+$white_color: rgba(255, 255, 255, 0.85)!important;
+
+.white-color {
+  color: rgba(255, 255, 255, 0.85)!important;
+}
+
+.black-color {
+  color: rgba(0, 0, 0, 0.91)!important;
+}
+
+$black_color: rgba(0, 0, 0, 0.91)!important;

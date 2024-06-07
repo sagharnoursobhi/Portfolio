@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { PortfolioComponent } from './portfolio.component';
 import { HeaderComponent } from './header/header.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
+
 
 
 
@@ -17,11 +19,14 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
     AboutMeComponent,
     AppFooterComponent,
     AppNavbarComponent,],
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        NgOptimizedImage,
+        ScrollingModule
+    ],
   exports: [
-    PortfolioComponent
+    PortfolioComponent,
+    AppNavbarComponent
   ]
 })
 export class PortfolioModule { }

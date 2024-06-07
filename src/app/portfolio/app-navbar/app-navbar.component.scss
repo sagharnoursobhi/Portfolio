@@ -1,0 +1,32 @@
+@import '../../../styles.scss';
+
+.navbar-toggler:focus {
+  box-shadow: none!important;
+}
+
+img.logo {
+  width: 50px;
+}
+
+.navbar {
+  &.large-index {
+    z-index: 1000;
+  }
+}
+
+li.nav-item {
+  a.nav-link {
+    color: $white_color;
+    border-bottom: 1px solid transparent;
+    transition: .4s border-bottom-color;
+
+    &:hover {
+      border-bottom-color: $white_color;
+    }
+
+    @media (max-width: 992px) {
+      color: $black_color;
+    }
+  }
+}
+
