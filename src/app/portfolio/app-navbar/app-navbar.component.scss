@@ -1,7 +1,13 @@
 @import '../../../styles.scss';
 
-.navbar-toggler:focus {
-  box-shadow: none!important;
+.navbar-toggler {
+  &:focus {
+    box-shadow: none!important;
+  }
+
+  i {
+    font-size: 30px;
+  }
 }
 
 img.logo {

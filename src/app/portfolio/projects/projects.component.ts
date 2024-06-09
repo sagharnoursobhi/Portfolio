@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { CdkScrollable, ScrollDispatcher } from "@angular/cdk/overlay";
 import ProjectModel from "../../models/project.model";
 
@@ -10,6 +10,12 @@ import ProjectModel from "../../models/project.model";
 export class ProjectsComponent implements OnInit{
   container = document.getElementById("container") as HTMLDivElement;
   projects: ProjectModel[];
+  nodeListOfProjects: NodeList = document.querySelectorAll<HTMLDivElement>(".item");
+  @ViewChild("parentEl") parentEl: ElementRef<HTMLElement> | undefined;
+
+  ngOnInit() {
+    console.log("page loaded!")
+  }
 
   constructor() {
     this.projects = [
@@ -62,11 +68,32 @@ export class ProjectsComponent implements OnInit{
     return item.id;
   }
 
-  onScroll() {
-    console.log("Hello")
-    console.log(this.container.scrollTop);
+  mouseOverHandler(event: MouseEvent) {
+   let target = event.target as HTMLElement;
+   if (target && !target.classList.contains(".item")) {
+     target = target.parentElement as HTMLElement;
+   }
+   const parentImage = target?.querySelector("img") as HTMLImageElement;
+   const parentText = target?.querySelector("h3") as HTMLHeadElement;
+   parentText.classList.add("d-block");
+   parentText.classList.remove("d-none");
+   parentImage.style.opacity = "0.5";
   }
-  ngOnInit() {
 
+  mouseOutHandler(event: MouseEvent) {
+    let target = event.target as HTMLElement;
+    if (target && !target.classList.contains(".item")) {
+      target = target.parentElement as HTMLElement;
+    }
+    const parentImage = target?.querySelector("img") as HTMLImageElement;
+    const parentText = target?.querySelector("h3") as HTMLHeadElement;
+
+    parentText.classList.remove("d-block");
+    parentText.classList.add("d-none");
+    parentImage.style.opacity = "1";
+  }
+  onScroll() {
+    console.log("scrolled")
+    console.log(this.container.scrollTop);
   }
 }

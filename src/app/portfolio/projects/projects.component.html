@@ -1,10 +1,15 @@
 <div class="d-flex flex-wrap gap-4 pt-3 container justify-content-center" id="projects"
-     (scroll)="onScroll()">
-  <div class="position-relative overflow-hidden rounded rounded-2"
-       *ngFor="let project of projects; trackBy: trackById;"><img
-    class="project-img object-fit-cover" width="500" height="367"
-    [ngSrc]="'../../../assets/' + project.src"
-    [alt]="project.name">
-    <a [href]="project.hyperLinkAddress" class="link-dark d-none" rel="noopener noreferrer"
-       target="_blank">{{ project.name }}</a></div>
+     (scroll)="onScroll()"
+     #parentEl>
+  <a [href]="project.hyperLinkAddress" class="position-relative overflow-hidden rounded rounded-2 item"
+     *ngFor="let project of projects; trackBy: trackById;" (mouseover)="mouseOverHandler($event)"
+     (mouseout)="mouseOutHandler($event)" target="_blank" rel="noopener noreferrer">
+    <div><img
+      class="project-img object-fit-cover" width="500" height="367"
+      [src]="'../../../assets/' + project.src"
+      [alt]="project.name">
+      <h3 class="text-black position-absolute translate-middle top-50 start-50 fw-bold d-none"
+      >{{ project.name }}</h3></div>
+  </a>
+
 </div>
