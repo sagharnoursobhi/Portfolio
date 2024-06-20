@@ -7,9 +7,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import {ScrollingModule} from "@angular/cdk/scrolling";
-
-
-
+import { PortfolioRoutingModule } from './portfolio-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +20,8 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     imports: [
         CommonModule,
         NgOptimizedImage,
-        ScrollingModule
+        ScrollingModule,
+        PortfolioRoutingModule,
     ],
   exports: [
     PortfolioComponent,

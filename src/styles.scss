@@ -26,14 +26,25 @@ a {
   text-decoration: none!important;
 }
 
-$white_color: rgba(255, 255, 255, 0.85)!important;
+$white_color: rgba(255, 255, 255, 0.85);
+$black_color: rgba(0, 0, 0, 0.91)!important;
 
 .white-color {
   color: rgba(255, 255, 255, 0.85)!important;
 }
 
+.yellow-color {
+  color: #efefa9!important;
+}
+
 .black-color {
   color: rgba(0, 0, 0, 0.91)!important;
 }
+
+.dark-gray-bg {
+  background-color: #3c4043;
+}
+
+$dark_black_background: #17191b!important;
 
 $black_color: rgba(0, 0, 0, 0.91)!important;

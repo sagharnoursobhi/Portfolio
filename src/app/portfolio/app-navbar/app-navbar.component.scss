@@ -2,7 +2,7 @@
 
 .navbar-toggler {
   &:focus {
-    box-shadow: none!important;
+    box-shadow: none !important;
   }
 
   i {
@@ -25,6 +25,10 @@ li.nav-item {
     color: $white_color;
     border-bottom: 1px solid transparent;
     transition: .4s border-bottom-color;
+
+    &.active-route {
+      border-bottom-color: $white_color;
+    }
 
     &:hover {
       border-bottom-color: $white_color;

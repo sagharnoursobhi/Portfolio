@@ -1,6 +1,8 @@
+@import "../../../styles.scss";
+
 .app-header {
   background: linear-gradient(#21252966, rgb(1 1 1 / 39%)),
-    url("../../../assets/home-section.jpeg") no-repeat center center / cover;
+    url("../../../assets/images/home-section.jpeg") no-repeat center center / cover;
   height: 400px;
 
   .header-btn {
@@ -11,10 +13,13 @@
     border: 1px solid rgba(255, 255, 255, 0.85);
     transition: .5s background-color;
     font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.85);
-      color: rgba(0, 0, 0, 0.91);
+      color: $black_color;
     }
   }
 }
