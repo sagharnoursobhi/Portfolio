@@ -1,4 +1,5 @@
 import {Component, HostListener} from '@angular/core';
+import {Event} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +12,8 @@ export class AppNavbarComponent {
   constructor() {
     this.isScrolled = false;
   }
-
-  @HostListener("window:scroll", [])
-  onWindowListener() {
+  @HostListener("window:scroll", ["$event"])
+  onWindowListener(event: Event) {
     this.isScrolled = window.scrollY > 0;
   }
 

@@ -5,28 +5,30 @@
             aria-controls="offcanvasNavbar">
       <i class="bi bi-list text-white"></i>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+         aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close"  aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <a routerLink="/" class="nav-link"><img class="logo" src="../../../assets/images/logo.png" alt=""></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2" data-bs-dismiss="offcanvas">
             <a routerLink="/" class="nav-link white-color p-0"
-               aria-current="page">Home</a>
+               aria-current="page" >Home</a>
           </li>
-          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
-            <a href="#projects" class="nav-link white-color text-dark p-0" fragment="projects">My
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2" data-bs-dismiss="offcanvas">
+            <a href="#projects" class="nav-link white-color text-dark p-0"
+               fragment="projects">My
               Work</a>
           </li>
-          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
-            <a href="#about-me" class="nav-link white-color p-0">
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2" data-bs-dismiss="offcanvas">
+            <a href="#about-me"  class="nav-link white-color p-0">
               About Me
             </a>
           </li>
-          <li class="nav-item ps-2 pe-2 pt-2 pb-2">
-            <a href="#app-footer" class="nav-link white-color p-0">Contact
+          <li class="nav-item ps-2 pe-2 pt-2 pb-2" data-bs-dismiss="offcanvas">
+            <a href="#app-footer"  class="nav-link white-color p-0">Contact
               Me</a>
           </li>
         </ul>

@@ -22,10 +22,13 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
         NgOptimizedImage,
         ScrollingModule,
         PortfolioRoutingModule,
+
     ],
   exports: [
     PortfolioComponent,
     AppNavbarComponent
+  ],
+  providers: [
   ]
 })
 export class PortfolioModule { }
