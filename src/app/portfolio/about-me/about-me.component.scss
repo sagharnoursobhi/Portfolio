@@ -2,8 +2,22 @@
   background: linear-gradient(rgb(1 1 1 / 35%), rgb(1 1 1 / 81%)), url("../../../assets/images/love-programming.jpeg") no-repeat center / cover;
   height: 100vh;
 
-  p {
+  .container {
     font-size: 21px;
     line-height: 31px;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    span {
+      opacity: 0;
+      display: inline-block;
+      transform: translateX(-100%)!important;
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+      &.animated {
+        opacity: 1;
+        transform: translateX(0)!important;
+      }
+    }
   }
 }

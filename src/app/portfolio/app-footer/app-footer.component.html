@@ -12,18 +12,18 @@
       <div
         class="d-flex flex-column justify-content-center contact-item align-items-start br-10__tl br-10__br dark-gray-bg col-12 col-md-7 col-lg-5 p-5">
         <i class="bi bi-envelope yellow-color"></i>
-        <p class="white-color">sagharnoursobhi@gmail.com</p>
+        <a [href]="'mailto:' + gmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body)" class="white-color">sagharnoursobhi@gmail.com</a>
       </div>
       <div
         class="d-flex flex-column justify-content-center align-items-start br-10__tl br-10__br dark-gray-bg contact-item col-12 col-md-5 p-5">
         <i class="bi bi-telephone-inbound yellow-color"></i>
-        <p class="white-color">+46737390072</p>
+        <a [href]="'tel:' + phoneNumber" class="white-color">+46737390072</a>
       </div>
       <a
         class="col-5 d-flex flex-column justify-content-center align-items-start br-10__tl br-10__br dark-gray-bg contact-item col-12 col-md-5 p-5"
         target="_blank" href="https://www.linkedin.com/in/saghar-noursobhi-514355143">
         <i class="bi bi-linkedin yellow-color"></i>
-        <p class="white-color">Contact Me on Linkedin</p>
+        <a class="white-color">Contact Me on Linkedin</a>
       </a>
     </section>
   </div>

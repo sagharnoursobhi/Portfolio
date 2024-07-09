@@ -18,6 +18,10 @@ img.logo {
   &.large-index {
     z-index: 1000;
   }
+
+  button.btn-close:focus {
+    box-shadow: none;
+  }
 }
 
 li.nav-item {
