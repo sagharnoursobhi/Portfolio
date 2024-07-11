@@ -5,6 +5,13 @@ footer {
   position: relative;
   z-index: 1;
 
+  @media (max-width: $medium_screen_size) {
+    .p-sm-3-only {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
   .contact-item {
     position: relative;
     &:before {
