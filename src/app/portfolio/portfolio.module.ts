@@ -8,6 +8,7 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { PortfolioRoutingModule } from './portfolio-routing.module';
+import {UtilityService} from "./services/utility/utility.service";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PortfolioRoutingModule } from './portfolio-routing.module';
     AppNavbarComponent
   ],
   providers: [
+    UtilityService,
   ]
 })
 export class PortfolioModule { }

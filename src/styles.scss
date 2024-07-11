@@ -45,6 +45,10 @@ $black_color: rgba(0, 0, 0, 0.91)!important;
   background-color: #3c4043;
 }
 
+.custom-cursor {
+  cursor: url("./assets/images/cursor-icon.png"), auto;
+}
+
 $dark_black_background: #17191b!important;
 
 $black_color: rgba(0, 0, 0, 0.91)!important;
