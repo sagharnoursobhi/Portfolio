@@ -1,5 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { CdkScrollable, ScrollDispatcher } from "@angular/cdk/overlay";
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import ProjectModel from "../../models/project.model";
 
 @Component({
@@ -13,11 +12,7 @@ export class ProjectsComponent implements OnInit{
   nodeListOfProjects: NodeList = document.querySelectorAll<HTMLDivElement>(".item");
   @ViewChild("parentEl") parentEl: ElementRef<HTMLElement> | undefined;
 
-  ngOnInit() {
-    console.log("page loaded!")
-  }
-
-  constructor() {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
     this.projects = [
       {
         name: "food order app",
@@ -64,23 +59,50 @@ export class ProjectsComponent implements OnInit{
     ]
   }
 
+  ngOnInit() {
+    const items = this.elementRef.nativeElement.querySelectorAll('.item');
+
+    items.forEach((item: HTMLElement) => {
+      this.renderer.listen(item, 'mouseover', (event: MouseEvent) => {
+        this.mouseOverHandler(event);
+      });
+
+      this.renderer.listen(item, 'mouseout', (event: MouseEvent) => {
+        this.mouseOutHandler(event);
+      });
+
+      this.renderer.listen(item, 'touchstart', (event: TouchEvent) => {
+        this.mouseOverHandler(event);
+      });
+
+      this.renderer.listen(item, 'touchend', (event: TouchEvent) => {
+        this.mouseOutHandler(event);
+      });
+    });
+  }
+
+
   trackById(index: number, item: ProjectModel) {
     return item.id;
   }
 
-  mouseOverHandler(event: MouseEvent) {
+  mouseOverHandler(event: MouseEvent | TouchEvent) {
    let target = event.target as HTMLElement;
    if (target && !target.classList.contains(".item")) {
      target = target.parentElement as HTMLElement;
    }
    const parentImage = target?.querySelector("img") as HTMLImageElement;
    const parentText = target?.querySelector("h3") as HTMLHeadElement;
-   parentText.classList.add("d-block");
-   parentText.classList.remove("d-none");
-   parentImage.style.opacity = "0.5";
+
+    if (parentText && parentImage) {
+      // Apply styles or perform actions safely
+      parentText.classList.add("d-block");
+      parentText.classList.remove("d-none");
+      parentImage.style.opacity = "0.5";
+    }
   }
 
-  mouseOutHandler(event: MouseEvent) {
+  mouseOutHandler(event: MouseEvent | TouchEvent) {
     let target = event.target as HTMLElement;
     if (target && !target.classList.contains(".item")) {
       target = target.parentElement as HTMLElement;
@@ -88,12 +110,10 @@ export class ProjectsComponent implements OnInit{
     const parentImage = target?.querySelector("img") as HTMLImageElement;
     const parentText = target?.querySelector("h3") as HTMLHeadElement;
 
-    parentText.classList.remove("d-block");
-    parentText.classList.add("d-none");
-    parentImage.style.opacity = "1";
-  }
-  onScroll() {
-    console.log("scrolled")
-    console.log(this.container.scrollTop);
+    if (parentText && parentImage) {
+      parentText.classList.remove("d-block");
+      parentText.classList.add("d-none");
+      parentImage.style.opacity = "1";
+    }
   }
 }
